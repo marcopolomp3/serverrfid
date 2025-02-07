@@ -34,8 +34,8 @@ app.post('/send-email', (req, res) => {
     // Configuración del correo a enviar
     const mailOptions = {
         from: process.env.EMAIL_USER,     // Dirección del remitente
-        to: to,                           // Dirección del destinatario
-        subject: subject,                 // Asunto
+        to: process.env.EMAIL_TO,                           // Dirección del destinatario
+        subject: subject || process.env.EMAIL_SUBJECT,                 // Asunto
         text: text,                       // Cuerpo del mensaje
     };
 
